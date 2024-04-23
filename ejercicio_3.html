@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operaciones con Array</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input, button {
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+    <h2>Operaciones con Array</h2>
+    <button onclick="agregarElemento()">Agregar Elemento</button>
+    <button onclick="eliminarUltimoElemento()">Eliminar Último Elemento</button>
+    <br>
+    <p id="contenido-array"></p>
+
+    <script>
+        var array = []; // Array vacío para almacenar los elementos
+
+        function mostrarContenidoArray() {
+            document.getElementById("contenido-array").innerText = "Contenido del Array: [" + array.join(", ") + "]";
+        }
+
+        function agregarElemento() {
+            var elemento = prompt("Ingrese un elemento:");
+            if (elemento !== null) {
+                array.push(elemento);
+                mostrarContenidoArray();
+            }
+        }
+
+        function eliminarUltimoElemento() {
+            if (array.length > 0) {
+                array.pop(); // Eliminar el último elemento del array
+                mostrarContenidoArray();
+            } else {
+                alert("El array está vacío.");
+            }
+        }
+    </script>
+</body>
+</html>

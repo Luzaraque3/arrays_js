@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concatenar Cadenas</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>Concatenar Cadenas</h2>
+    <label for="cadena1">Cadena 1:</label>
+    <input type="text" id="cadena1" placeholder="Ingrese la primera cadena (separada por comas)">
+    <br>
+    <label for="cadena2">Cadena 2:</label>
+    <input type="text" id="cadena2" placeholder="Ingrese la segunda cadena (separada por comas)">
+    <br>
+    <button onclick="concatenarCadenas()">Concatenar</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function concatenarCadenas() {
+            var cadena1 = document.getElementById("cadena1").value;
+            var cadena2 = document.getElementById("cadena2").value;
+
+            // Concatenar las dos cadenas con una coma y un espacio
+            var resultado = cadena1 + ", " + cadena2;
+
+            // Mostrar el resultado en pantalla
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

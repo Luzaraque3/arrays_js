@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números Pares</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input, button {
+        margin: 5px;
+    }
+    table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+</style>
+</head>
+<body>
+    <h2>Números Pares</h2>
+    <label for="numeros">Ingrese un conjunto de números separados por comas:</label>
+    <br>
+    <input type="text" id="numeros" placeholder="Ejemplo: 1, 2, 3, 4, 5">
+    <br>
+    <button onclick="mostrarNumerosPares()">Pares</button>
+    <br>
+    <div id="tabla-container"></div>
+
+    <script>
+        function mostrarNumerosPares() {
+            var numerosInput = document.getElementById("numeros").value;
+            var numeros = numerosInput.split(",").map(Number); // Convertir la cadena en una lista de números
+            var numerosPares = numeros.filter(function(numero) {
+                return numero % 2 === 0; // Filtrar los números pares
+            });
+
+            // Mostrar tabla con todos los números
+            var tablaCompleta = "<h3>Tabla Completa</h3><table><tr><th>Número</th></tr>";
+            for (var i = 0; i < numeros.length; i++) {
+                tablaCompleta += "<tr><td>" + numeros[i] + "</td></tr>";
+            }
+            tablaCompleta += "</table>";
+
+            // Mostrar tabla con los números pares
+            var tablaPares = "<h3>Números Pares</h3><table><tr><th>Número</th></tr>";
+            for (var j = 0; j < numerosPares.length; j++) {
+                tablaPares += "<tr><td>" + numerosPares[j] + "</td></tr>";
+            }
+            tablaPares += "</table>";
+
+            // Mostrar ambas tablas en el contenedor
+            document.getElementById("tabla-container").innerHTML = tablaCompleta + tablaPares;
+        }
+    </script>
+</body>
+</html>
